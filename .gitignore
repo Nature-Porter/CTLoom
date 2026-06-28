@@ -1,0 +1,28 @@
+# Config (contains API keys)
+config.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Project runtime data
+.mewcode/memory/
+.mewcode/session/
+.claude/
+CLAUDE.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Session data
+*.jsonl
