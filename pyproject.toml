@@ -15,10 +15,10 @@ dependencies = [
 ]
 
 [project.scripts]
-mewcode = "mewcode.__main__:main"
+ctloom = "ctloom.__main__:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["mewcode"]
+packages = ["ctloom"]
 
 [build-system]
 requires = ["hatchling"]

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from mewcode.context.manager import (
+from ctloom.context.manager import (
     AGGREGATE_CHAR_LIMIT,
     KEEP_MAX_TOKENS,
     KEEP_RECENT_TOKENS,
@@ -29,7 +29,7 @@ from mewcode.context.manager import (
     persist_tool_result,
     should_auto_compact,
 )
-from mewcode.conversation import (
+from ctloom.conversation import (
     _CHARS_PER_TOKEN,
     ConversationManager,
     Message,
@@ -362,7 +362,7 @@ class TestEstimateTokens:
         assert estimate_tokens([]) == 0
 
     def test_counts_text_thinking_tools_and_results(self) -> None:
-        from mewcode.conversation import ThinkingBlock
+        from ctloom.conversation import ThinkingBlock
 
         msgs = [
             Message(role="user", content="a" * 35),
@@ -390,7 +390,7 @@ class TestEstimateTokens:
 
 class TestStreamUsageCacheFields:
     def test_stream_end_carries_cache_fields(self) -> None:
-        from mewcode.tools.base import StreamEnd
+        from ctloom.tools.base import StreamEnd
 
         end = StreamEnd(
             stop_reason="end_turn",
@@ -404,8 +404,8 @@ class TestStreamUsageCacheFields:
     def test_collector_propagates_cache_fields_into_response(self) -> None:
         import asyncio
 
-        from mewcode.agent import StreamCollector
-        from mewcode.tools.base import StreamEnd
+        from ctloom.agent import StreamCollector
+        from ctloom.tools.base import StreamEnd
 
         async def _stream():
             yield StreamEnd(
@@ -541,7 +541,7 @@ class _SummaryClient:
         self.summarized_history: list[Message] | None = None
 
     async def stream(self, conversation, system=""):
-        from mewcode.tools.base import StreamEnd, TextDelta
+        from ctloom.tools.base import StreamEnd, TextDelta
 
         # 快照记录交给摘要器的内容（不含编排器额外添加的开头 prompt
         # 以及结尾的"请生成摘要"指令）。
@@ -583,7 +583,7 @@ class TestAutoCompactKeepRecent:
         )
 
         # 已完成压缩。
-        from mewcode.context.manager import CompactEvent
+        from ctloom.context.manager import CompactEvent
         assert isinstance(result, CompactEvent)
 
         joined = "\n".join(m.content for m in conv.history)
@@ -688,7 +688,7 @@ class TestAutoCompactKeepRecent:
             conv, client, context_window=200_000, session_dir=tmp_path,
         )
 
-        from mewcode.context.manager import CompactEvent
+        from ctloom.context.manager import CompactEvent
 
         assert isinstance(result, CompactEvent)
         assert result.boundary is not None

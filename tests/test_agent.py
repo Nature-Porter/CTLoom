@@ -8,7 +8,7 @@ from typing import Any, AsyncIterator
 
 import pytest
 
-from mewcode.agent import (
+from ctloom.agent import (
     Agent,
     ErrorEvent,
     LoopComplete,
@@ -21,12 +21,12 @@ from mewcode.agent import (
     UsageEvent,
     partition_tool_calls,
 )
-from mewcode.prompts import build_environment_context, build_plan_mode_reminder, build_system_prompt
-from mewcode.client import LLMClient
-from mewcode.conversation import ConversationManager
-from mewcode.serialization import build_anthropic_messages
-from mewcode.tools import create_default_registry
-from mewcode.tools.base import (
+from ctloom.prompts import build_environment_context, build_plan_mode_reminder, build_system_prompt
+from ctloom.client import LLMClient
+from ctloom.conversation import ConversationManager
+from ctloom.serialization import build_anthropic_messages
+from ctloom.tools import create_default_registry
+from ctloom.tools.base import (
     StreamEnd,
     StreamEvent,
     TextDelta,
@@ -123,20 +123,20 @@ async def test_single_step_tool_call():
 async def test_multi_step_autonomous():
     """Agent 先 WriteFile 再 ReadFile 然后停止 —— 端到端的多步流程。"""
     # 清理残留文件，避免 read-before-edit 拦截新文件创建
-    test_file = "/tmp/mewcode_test_hello.txt"
+    test_file = "/tmp/ctloom_test_hello.txt"
     if os.path.exists(test_file):
         os.remove(test_file)
     client = MockLLMClient([
         # 第 1 轮：WriteFile
         [
             TextDelta("Creating file."),
-            ToolCallComplete("t1", "WriteFile", {"file_path": "/tmp/mewcode_test_hello.txt", "content": "Hello World"}),
+            ToolCallComplete("t1", "WriteFile", {"file_path": "/tmp/ctloom_test_hello.txt", "content": "Hello World"}),
             StreamEnd("end_turn", input_tokens=10, output_tokens=20),
         ],
         # 第 2 轮：ReadFile 进行验证
         [
             TextDelta("Verifying content."),
-            ToolCallComplete("t2", "ReadFile", {"file_path": "/tmp/mewcode_test_hello.txt"}),
+            ToolCallComplete("t2", "ReadFile", {"file_path": "/tmp/ctloom_test_hello.txt"}),
             StreamEnd("end_turn", input_tokens=40, output_tokens=25),
         ],
         # 第 3 轮：最终答案
@@ -395,7 +395,7 @@ async def test_token_usage_accumulates():
 @pytest.mark.asyncio
 async def test_plan_mode():
     """通过 permission_mode 切换 plan 模式。"""
-    from mewcode.permissions import PermissionMode
+    from ctloom.permissions import PermissionMode
 
     registry = create_default_registry()
     agent = Agent(MockLLMClient([]), registry, "anthropic")
@@ -415,7 +415,7 @@ async def test_plan_mode():
 async def test_plan_mode_denied_tool_returns_error():
     """在 plan 模式下，写入类工具需要审批（effect=ask）；当用户
     拒绝时，工具返回一个错误结果，而不会真正执行。"""
-    from mewcode.permissions import (
+    from ctloom.permissions import (
         DangerousCommandDetector,
         PathSandbox,
         PermissionChecker,
@@ -461,7 +461,7 @@ async def test_plan_mode_denied_tool_returns_error():
 
 def test_partition_tool_calls():
     """分批逻辑会把可并发执行的调用归到同一组。"""
-    from mewcode.tools.base import ToolCallComplete
+    from ctloom.tools.base import ToolCallComplete
 
     calls = [
         ToolCallComplete("1", "ReadFile", {}),

@@ -15,8 +15,8 @@ build/
 .vscode/
 
 # Project runtime data
-.mewcode/memory/
-.mewcode/session/
+.ctloom/memory/
+.ctloom/session/
 .claude/
 CLAUDE.md
 

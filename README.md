@@ -49,13 +49,13 @@ export OPENAI_API_KEY=sk-...
 ### 运行 / Run
 
 ```bash
-mewcode
+ctloom
 ```
 
 ## 项目结构 / Project Structure
 
 ```
-mewcode/
+ctloom/
 ├── agent.py            # 核心 Agent 循环（ReAct + Plan Mode）
 ├── app.py              # 终端 UI（Textual）
 ├── driver.py           # 引擎驱动，编排 Agent ↔ 工具 ↔ LLM
