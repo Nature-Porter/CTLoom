@@ -1,5 +1,7 @@
 # Config (contains API keys)
 config.yaml
+.ctloom/config.local.yaml
+.ctloom/permissions.local.yaml
 
 # Python
 __pycache__/
@@ -17,6 +19,9 @@ build/
 # Project runtime data
 .ctloom/memory/
 .ctloom/session/
+.ctloom/sessions/
+.ctloom/debug.log
+.ctloom/history
 .claude/
 CLAUDE.md
 

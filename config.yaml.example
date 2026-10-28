@@ -1,28 +1,44 @@
+# Copy to .ctloom/config.local.yaml in your working project.
+# Replace your-model-id with a model available from your provider.
+# An empty api_key reads ANTHROPIC_API_KEY / OPENAI_API_KEY from the environment.
 providers:
   - name: anthropic-official
     protocol: anthropic
     base_url: https://api.anthropic.com
-    api_key: "your-api-key-here"
-    model: claude-sonnet-4-20250514
-    thinking: true
+    api_key: ""
+    model: your-model-id
+    thinking: false
+    # Optional overrides; set values supported by your model:
+    # context_window: 200000
+    # max_output_tokens: 8192
 
-  # OpenAI provider example
+  # OpenAI Responses API (OPENAI_API_KEY):
   # - name: openai-official
   #   protocol: openai
   #   base_url: https://api.openai.com/v1
-  #   api_key: "your-api-key-here"
-  #   model: gpt-4o
+  #   api_key: ""
+  #   model: your-model-id
+
+  # Chat Completions compatible service (OPENAI_API_KEY):
+  # - name: compatible-provider
+  #   protocol: openai-compat
+  #   base_url: https://your-provider.example/v1
+  #   api_key: ""
+  #   model: your-model-id
 
 permission_mode: default
 
-mcp_servers:
-  - name: context7
-    command: npx
-    args: ["-y", "@upstash/context7-mcp"]
+# Optional MCP services. Leave empty for the first run.
+mcp_servers: []
 
-  # Streamable HTTP example (2025-03-26 spec, default when url is set):
-  # - name: my-http-mcp
-  #   url: https://example.com/mcp
-  #   transport: http   # optional; "http" (default) or "sse"
-  #   headers:
-  #     Authorization: "Bearer ${MY_TOKEN}"
+# To enable MCP, replace the empty list above with a list such as:
+# mcp_servers:
+#   - name: context7
+#     command: npx
+#     args: ["-y", "@upstash/context7-mcp"]
+#
+#   # Streamable HTTP (legacy SSE transport is not implemented):
+#   - name: remote-tools
+#     url: https://your-server.example/mcp
+#     headers:
+#       Authorization: "Bearer ${MCP_TOKEN}"

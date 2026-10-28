@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">CTLoom — Code, tools, and collaboration, woven together.</title>
+  <desc id="desc">A dark terminal-inspired banner with violet, cyan, and gold threads woven into a terminal window.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#17132d"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="1280" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#grid)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <rect x="64" y="48" width="202" height="28" rx="14" fill="#a78bfa" fill-opacity=".12" stroke="#a78bfa" stroke-opacity=".3"/>
+    <circle cx="82" cy="62" r="4" fill="#5eead4"/>
+    <text x="96" y="67" fill="#c4b5fd" font-size="12" font-weight="600" letter-spacing="1.5">TERMINAL-NATIVE AI</text>
+    <text x="60" y="169" fill="#f8fafc" font-size="84" font-weight="700" letter-spacing="-4">CTLoom<tspan fill="#67e8f9">_</tspan></text>
+    <text x="65" y="214" fill="#cbd5e1" font-size="22">Code, tools, and collaboration, woven together.</text>
+    <rect x="65" y="249" width="450" height="1" fill="url(#accent)" opacity=".4"/>
+    <text x="65" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">PLAN</text><circle cx="122" cy="279" r="2" fill="#a78bfa"/>
+    <text x="139" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">BUILD</text><circle cx="207" cy="279" r="2" fill="#67e8f9"/>
+    <text x="224" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">COLLABORATE</text>
+  </g>
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M711 104C792 104 775 243 859 243H933" stroke="#a78bfa"/>
+    <path d="M711 178C776 178 794 104 859 104H933" stroke="#67e8f9"/>
+    <path d="M711 252C803 252 774 178 859 178H933" stroke="#f0b45c"/>
+  </g>
+  <rect x="912" y="69" width="300" height="220" rx="16" fill="#171728" stroke="#475569"/>
+  <path d="M912 113H1212" stroke="#334155"/>
+  <circle cx="935" cy="91" r="4" fill="#f87171"/><circle cx="951" cy="91" r="4" fill="#f0b45c"/><circle cx="967" cy="91" r="4" fill="#5eead4"/>
+  <g font-family="Consolas,monospace" font-size="17">
+    <text x="937" y="148" fill="#67e8f9">&gt; ctloom</text>
+    <text x="937" y="185" fill="#a78bfa">plan<tspan fill="#64748b"> → </tspan><tspan fill="#cbd5e1">understand</tspan></text>
+    <text x="937" y="216" fill="#5eead4">tool<tspan fill="#64748b"> → </tspan><tspan fill="#cbd5e1">execute</tspan></text>
+    <text x="937" y="247" fill="#f0b45c">team<tspan fill="#64748b"> → </tspan><tspan fill="#cbd5e1">collaborate</tspan></text>
+  </g>
+</svg>
