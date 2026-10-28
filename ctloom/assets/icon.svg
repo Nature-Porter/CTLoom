@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="ctloom-icon-title ctloom-icon-desc">
+  <title id="ctloom-icon-title">CTLoom</title>
+  <desc id="ctloom-icon-desc">An original woven C and T monogram: violet frame, cyan warp, and a gold cross-thread.</desc>
+  <rect width="128" height="128" rx="28" fill="#101622"/>
+  <path d="M70 28H40L24 44V84L40 100H64" fill="none" stroke="#a78bfa" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M58 40H104M82 40V100" fill="none" stroke="#67e8f9" stroke-width="12"/>
+  <path d="M48 72H69M95 72H104" fill="none" stroke="#f0b45c" stroke-width="8"/>
+</svg>

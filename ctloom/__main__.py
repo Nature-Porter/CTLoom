@@ -25,7 +25,7 @@ def main() -> None:
         filemode="w",
     )
 
-    parser = argparse.ArgumentParser(prog="ctloom", description="MewCode AI coding assistant")
+    parser = argparse.ArgumentParser(prog="ctloom", description="CTLoom AI coding assistant")
     parser.add_argument(
         "--mode",
         choices=[m.value for m in PermissionMode],
@@ -86,10 +86,10 @@ def main() -> None:
         asyncio.run(server.run())
         return
 
-    from ctloom.app import MewCodeApp
+    from ctloom.app import CTLoomApp
     from ctloom.driver import NoAltScreenDriver
 
-    app = MewCodeApp(
+    app = CTLoomApp(
         providers=config.providers,
         permission_mode=permission_mode,
         mcp_servers=config.mcp_servers,
@@ -356,4 +356,3 @@ async def _run_prompt(config, permission_mode, hook_engine, prompt: str, output_
 
 if __name__ == "__main__":
     main()
-

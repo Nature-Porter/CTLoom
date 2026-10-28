@@ -1,13 +1,14 @@
 
 # Remote 模式的 Web 前端 HTML。
-# 从 Go 版 internal/remote/web.go 原样复制。
+from ctloom.branding import favicon_uri, icon_svg
 
 INDEX_HTML = r"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MewCode Remote</title>
+<title>CTLoom Remote</title>
+<link rel="icon" type="image/svg+xml" href="__CTLOOM_FAVICON__">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -38,7 +39,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   padding: 8px 16px; border-bottom: 1px solid var(--border);
   font-size: 12px; color: var(--text-dim); flex-shrink: 0;
 }
-#status-bar .brand { color: var(--accent); font-weight: bold; font-size: 14px; }
+#status-bar .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-bright); font-weight: bold; font-size: 16px; }
+#status-bar .brand svg { width: 32px; height: 32px; flex-shrink: 0; }
+#status-bar .brand-mode { color: var(--text-dim); font-weight: normal; font-size: 12px; }
 #status-bar .info { display: flex; gap: 16px; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
 .dot.connected { background: var(--green); }
@@ -196,7 +199,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 <body>
 <div id="app">
   <div id="status-bar">
-    <span class="brand">⚡ MewCode Remote</span>
+    <span class="brand">__CTLOOM_ICON__<span>CTLoom <span class="brand-mode">Remote</span></span></span>
     <div class="info">
       <span id="conn-status"><span class="dot disconnected"></span>Connecting...</span>
       <span id="token-info"></span>
@@ -802,3 +805,7 @@ inputEl.focus();
 </script>
 </body>
 </html>"""
+
+INDEX_HTML = INDEX_HTML.replace("__CTLOOM_ICON__", icon_svg()).replace(
+    "__CTLOOM_FAVICON__", favicon_uri()
+)

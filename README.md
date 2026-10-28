@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/version-0.2.0-8b5cf6" alt="Version 0.2.0"></a>
-  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" alt="Python 3.11+"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB" alt="Python 3.11+"></a>
   <a href="ctloom/app.py"><img src="https://img.shields.io/badge/UI-Textual-14b8a6" alt="Textual terminal UI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-f0b45c" alt="MIT License"></a>
 </p>
@@ -28,12 +28,14 @@
 
 CTLoom 是基于 Python 与 Textual 构建的 AI 编程助手。它将模型对话、文件操作、Shell 命令、任务规划和多 Agent 协作放在同一个终端工作流中，并通过 MCP、Skills 与 Hooks 扩展能力。
 
+项目使用原创的 **CT 编织标识**，统一应用于终端、浏览器和文档。SVG、PNG、ICO 图标资源及用法见 [视觉标识](docs/branding.md)。
+
 <a id="preview"></a>
 ## 界面预览
 
 ![CTLoom 终端界面：内置命令帮助、输入区与模型状态栏](docs/images/terminal-help.svg)
 
-*真实 Textual 界面，通过本地 `/help` 命令截取；使用演示配置，无需调用模型 API。当前代码中的部分界面标题仍显示旧名称 MewCode，Python 包名和启动命令已统一为 `ctloom`。*
+*真实 Textual 界面，通过本地 `/help` 命令截取；使用演示配置，无需调用模型 API。终端左上角为 CTLoom 专属的 CT 编织标识。*
 
 <a id="features"></a>
 ## 核心能力

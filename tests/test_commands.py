@@ -366,7 +366,7 @@ class TestStatusHandler:
         ctx.memory_manager.load.return_value = ""
 
         await handle_status(ctx)
-        assert "MewCode 状态" in ui.messages[0]
+        assert "CTLoom 状态" in ui.messages[0]
         assert "default" in ui.messages[0]
 
 class TestSessionHandler:

@@ -1,3 +1,4 @@
+# CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md.
 #!/usr/bin/env python3
 """Generate and serve a review page for eval results.
 
@@ -49,10 +50,6 @@ MIME_OVERRIDES = {
 }
 
 
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
 
 def get_mime_type(path: Path) -> str:
     ext = path.suffix.lower()
@@ -151,10 +148,6 @@ def build_run(root: Path, run_dir: Path) -> dict | None:
     }
 
 
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
-# Agent网站：xiaolinnote.com
 
 def embed_file(path: Path) -> dict:
     """Read a file and return an embedded representation."""
@@ -257,10 +250,6 @@ def load_previous_iteration(workspace: Path) -> dict[str, dict]:
     return result
 
 
-# Agent网站：xiaolinnote.com
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
 
 def generate_html(
     runs: list[dict],
@@ -394,20 +383,12 @@ class ReviewHandler(BaseHTTPRequestHandler):
         else:
             self.send_error(404)
 
-    # Agent网站：xiaolinnote.com
-    # 来源：公众号@小林coding
-    # 后端八股网站：xiaolincoding.com
-    # 简历模版：jianli.xiaolinnote.com
 
     def log_message(self, format: str, *args: object) -> None:
         # Suppress request logging to keep terminal clean
         pass
 
 
-# 来源：公众号@小林coding
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
-# 后端八股网站：xiaolincoding.com
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate and serve eval review")

@@ -564,7 +564,7 @@ class TestAgentCoordinatorIntegration:
         from ctloom.prompts import build_system_prompt, IDENTITY_SECTION
         prompt = build_system_prompt()
         # 验证 identity section 内容包含在 prompt 中
-        assert "MewCode" in prompt
+        assert "CTLoom" in prompt
         assert IDENTITY_SECTION.content[:30] in prompt
 
     def test_coordinator_prompt(self):

@@ -2,43 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eval Set Review - __SKILL_NAME_PLACEHOLDER__</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <title>CTLoom · Eval Set Review - __SKILL_NAME_PLACEHOLDER__</title>
+
+
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Lora', Georgia, serif; background: #faf9f5; padding: 2rem; color: #141413; }
-    h1 { font-family: 'Poppins', sans-serif; margin-bottom: 0.5rem; font-size: 1.5rem; }
+    body { font-family: system-ui, "Segoe UI", sans-serif; background: #faf9f5; padding: 2rem; color: #141413; }
+    h1 { font-family: system-ui, "Segoe UI", sans-serif; margin-bottom: 0.5rem; font-size: 1.5rem; }
     .description { color: #b0aea5; margin-bottom: 1.5rem; font-style: italic; max-width: 900px; }
     .controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; }
-    .btn { font-family: 'Poppins', sans-serif; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; font-size: 0.875rem; font-weight: 500; }
+    .btn { font-family: system-ui, "Segoe UI", sans-serif; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; font-size: 0.875rem; font-weight: 500; }
     .btn-add { background: #6a9bcc; color: white; }
     .btn-add:hover { background: #5889b8; }
-    .btn-export { background: #d97757; color: white; }
-    .btn-export:hover { background: #c4613f; }
+    .btn-export { background: #8b5cf6; color: white; }
+    .btn-export:hover { background: #7c3aed; }
     table { width: 100%; max-width: 1100px; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    th { font-family: 'Poppins', sans-serif; background: #141413; color: #faf9f5; padding: 0.75rem 1rem; text-align: left; font-size: 0.875rem; }
+    th { font-family: system-ui, "Segoe UI", sans-serif; background: #141413; color: #faf9f5; padding: 0.75rem 1rem; text-align: left; font-size: 0.875rem; }
     td { padding: 0.75rem 1rem; border-bottom: 1px solid #e8e6dc; vertical-align: top; }
     tr:nth-child(even) td { background: #faf9f5; }
     tr:hover td { background: #f3f1ea; }
-    .section-header td { background: #e8e6dc; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 0.8rem; color: #141413; text-transform: uppercase; letter-spacing: 0.05em; }
-    .query-input { width: 100%; padding: 0.4rem; border: 1px solid #e8e6dc; border-radius: 4px; font-size: 0.875rem; font-family: 'Lora', Georgia, serif; resize: vertical; min-height: 60px; }
-    .query-input:focus { outline: none; border-color: #d97757; box-shadow: 0 0 0 2px rgba(217,119,87,0.15); }
+    .section-header td { background: #e8e6dc; font-family: system-ui, "Segoe UI", sans-serif; font-weight: 500; font-size: 0.8rem; color: #141413; text-transform: uppercase; letter-spacing: 0.05em; }
+    .query-input { width: 100%; padding: 0.4rem; border: 1px solid #e8e6dc; border-radius: 4px; font-size: 0.875rem; font-family: system-ui, "Segoe UI", sans-serif; resize: vertical; min-height: 60px; }
+    .query-input:focus { outline: none; border-color: #8b5cf6; box-shadow: 0 0 0 2px rgba(139,92,246,0.15); }
     .toggle { position: relative; display: inline-block; width: 44px; height: 24px; }
     .toggle input { opacity: 0; width: 0; height: 0; }
     .toggle .slider { position: absolute; inset: 0; background: #b0aea5; border-radius: 24px; cursor: pointer; transition: 0.2s; }
     .toggle .slider::before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.2s; }
-    .toggle input:checked + .slider { background: #d97757; }
+    .toggle input:checked + .slider { background: #8b5cf6; }
     .toggle input:checked + .slider::before { transform: translateX(20px); }
-    .btn-delete { background: #c44; color: white; padding: 0.3rem 0.6rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-family: 'Poppins', sans-serif; }
+    .btn-delete { background: #c44; color: white; padding: 0.3rem 0.6rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-family: system-ui, "Segoe UI", sans-serif; }
     .btn-delete:hover { background: #a33; }
     .summary { margin-top: 1rem; color: #b0aea5; font-size: 0.875rem; }
   </style>
 </head>
 <body>
-  <h1>Eval Set Review: <span id="skill-name">__SKILL_NAME_PLACEHOLDER__</span></h1>
+  <h1><svg style="vertical-align:middle;margin-right:10px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128" role="img" aria-labelledby="ctloom-icon-title ctloom-icon-desc">
+  <title id="ctloom-icon-title">CTLoom</title>
+  <desc id="ctloom-icon-desc">An original woven C and T monogram: violet frame, cyan warp, and a gold cross-thread.</desc>
+  <rect width="128" height="128" rx="28" fill="#101622"/>
+  <path d="M70 28H40L24 44V84L40 100H64" fill="none" stroke="#a78bfa" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M58 40H104M82 40V100" fill="none" stroke="#67e8f9" stroke-width="12"/>
+  <path d="M48 72H69M95 72H104" fill="none" stroke="#f0b45c" stroke-width="8"/>
+</svg>
+CTLoom · Eval Set Review: <span id="skill-name">__SKILL_NAME_PLACEHOLDER__</span></h1>
   <p class="description">Current description: <span id="skill-desc">__SKILL_DESCRIPTION_PLACEHOLDER__</span></p>
 
   <div class="controls">

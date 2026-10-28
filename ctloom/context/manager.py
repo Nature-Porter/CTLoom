@@ -31,7 +31,7 @@ AUTO_COMPACT_SAFETY_MARGIN = 13_000
 # 硬触发安全边距：effectiveWindow − 3K 为强制压缩触发线，绕过熔断器
 MANUAL_COMPACT_SAFETY_MARGIN = 3_000
 
-# Layer 2 "保留近期原文"窗口（对应 Claude Code compact.ts 的
+# Layer 2 "保留近期原文"窗口（对应上下文压缩的
 # buildPostCompactMessages messagesToKeep）。压缩时，尾部消息按 token 累计不超过
 # KEEP_RECENT_TOKENS、或消息数不少于 MIN_KEEP_MESSAGES（取先满足的条件保底）保留原文，
 # 不纳入摘要。累计超过 KEEP_MAX_TOKENS 时停止，防止单条超大消息吞掉整个窗口。
@@ -812,7 +812,7 @@ async def auto_compact(
 
     before_tokens = current
 
-    # 对齐 Claude Code：先应用 tool-result budget，再做 auto-compact
+    # 先应用 tool-result budget，再做 auto-compact
     # 当调用方提前对 conversation 做了 budget 替换，把替换后的消息列表传入
     # budget_messages，这样 keep_start 的计算和摘要构建都基于缩减后的 token
     # 估算，让阈值判断更准确。最终仍然重写 conversation.history（原始对话）。

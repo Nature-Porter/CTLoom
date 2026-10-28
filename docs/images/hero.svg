@@ -12,13 +12,21 @@
     <rect x="64" y="48" width="202" height="28" rx="14" fill="#a78bfa" fill-opacity=".12" stroke="#a78bfa" stroke-opacity=".3"/>
     <circle cx="82" cy="62" r="4" fill="#5eead4"/>
     <text x="96" y="67" fill="#c4b5fd" font-size="12" font-weight="600" letter-spacing="1.5">TERMINAL-NATIVE AI</text>
-    <text x="60" y="169" fill="#f8fafc" font-size="84" font-weight="700" letter-spacing="-4">CTLoom<tspan fill="#67e8f9">_</tspan></text>
-    <text x="65" y="214" fill="#cbd5e1" font-size="22">Code, tools, and collaboration, woven together.</text>
-    <rect x="65" y="249" width="450" height="1" fill="url(#accent)" opacity=".4"/>
-    <text x="65" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">PLAN</text><circle cx="122" cy="279" r="2" fill="#a78bfa"/>
-    <text x="139" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">BUILD</text><circle cx="207" cy="279" r="2" fill="#67e8f9"/>
-    <text x="224" y="284" fill="#94a3b8" font-size="14" letter-spacing="1.4">COLLABORATE</text>
+    <text x="182" y="182" fill="#f8fafc" font-size="76" font-weight="700" letter-spacing="-4">CTLoom<tspan fill="#67e8f9">_</tspan></text>
+    <text x="65" y="237" fill="#cbd5e1" font-size="22">Code, tools, and collaboration, woven together.</text>
+    <rect x="65" y="261" width="450" height="1" fill="url(#accent)" opacity=".4"/>
+    <text x="65" y="302" fill="#94a3b8" font-size="14" letter-spacing="1.4">PLAN</text><circle cx="122" cy="297" r="2" fill="#a78bfa"/>
+    <text x="139" y="302" fill="#94a3b8" font-size="14" letter-spacing="1.4">BUILD</text><circle cx="207" cy="297" r="2" fill="#67e8f9"/>
+    <text x="224" y="302" fill="#94a3b8" font-size="14" letter-spacing="1.4">COLLABORATE</text>
   </g>
+  <g transform="translate(64 108) scale(.78)">
+  <title id="ctloom-icon-title">CTLoom</title>
+  <desc id="ctloom-icon-desc">An original woven C and T monogram: violet frame, cyan warp, and a gold cross-thread.</desc>
+  <rect width="128" height="128" rx="28" fill="#101622"/>
+  <path d="M70 28H40L24 44V84L40 100H64" fill="none" stroke="#a78bfa" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M58 40H104M82 40V100" fill="none" stroke="#67e8f9" stroke-width="12"/>
+  <path d="M48 72H69M95 72H104" fill="none" stroke="#f0b45c" stroke-width="8"/>
+</g>
   <g fill="none" stroke-width="5" stroke-linecap="round">
     <path d="M711 104C792 104 775 243 859 243H933" stroke="#a78bfa"/>
     <path d="M711 178C776 178 794 104 859 104H933" stroke="#67e8f9"/>

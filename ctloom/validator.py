@@ -1,4 +1,4 @@
-"""MewCode 的配置校验逻辑。"""
+"""CTLoom 的配置校验逻辑。"""
 
 from __future__ import annotations
 

@@ -1,3 +1,4 @@
+# CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md.
 #!/usr/bin/env python3
 """
 Aggregate individual run results into benchmark summary statistics.
@@ -64,10 +65,6 @@ def calculate_stats(values: list[float]) -> dict:
     }
 
 
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
 
 def load_run_results(benchmark_dir: Path) -> dict:
     """
@@ -178,10 +175,6 @@ def load_run_results(benchmark_dir: Path) -> dict:
     return results
 
 
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
 
 def aggregate_results(results: dict) -> dict:
     """
@@ -234,10 +227,6 @@ def aggregate_results(results: dict) -> dict:
     return run_summary
 
 
-# 简历模版：jianli.xiaolinnote.com
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
 
 def generate_benchmark(benchmark_dir: Path, skill_name: str = "", skill_path: str = "") -> dict:
     """
@@ -293,10 +282,6 @@ def generate_benchmark(benchmark_dir: Path, skill_name: str = "", skill_path: st
     return benchmark
 
 
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
 
 def generate_markdown(benchmark: dict) -> str:
     """Generate human-readable benchmark.md from benchmark data."""
@@ -355,10 +340,6 @@ def generate_markdown(benchmark: dict) -> str:
     return "\n".join(lines)
 
 
-# 后端八股网站：xiaolincoding.com
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
 
 def main():
     parser = argparse.ArgumentParser(

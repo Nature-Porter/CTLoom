@@ -1,6 +1,4 @@
-# 来源：公众号@小林coding
-# 简历模版：jianli.xiaolinnote.com
-
+# CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md.
 """
 Quick validation script for skills - minimal version
 """
@@ -11,10 +9,6 @@ import re
 import yaml
 from pathlib import Path
 
-# Agent网站：xiaolinnote.com
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
 
 def validate_skill(skill_path):
     """Basic validation of a skill"""
@@ -48,10 +42,6 @@ def validate_skill(skill_path):
     # Define allowed properties
     ALLOWED_PROPERTIES = {'name', 'description', 'license', 'allowed-tools', 'metadata', 'compatibility'}
 
-    # Agent网站：xiaolinnote.com
-    # 简历模版：jianli.xiaolinnote.com
-    # 后端八股网站：xiaolincoding.com
-    # 来源：公众号@小林coding
 
     # Check for unexpected properties (excluding nested keys under metadata)
     unexpected_keys = set(frontmatter.keys()) - ALLOWED_PROPERTIES
@@ -105,10 +95,6 @@ def validate_skill(skill_path):
 
     return True, "Skill is valid!"
 
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
-# Agent网站：xiaolinnote.com
-# 后端八股网站：xiaolincoding.com
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -119,7 +105,4 @@ if __name__ == "__main__":
     print(message)
     sys.exit(0 if valid else 1)
 
-    # 后端八股网站：xiaolincoding.com
-    # Agent网站：xiaolinnote.com
-    # 来源：公众号@小林coding
     # 简历模版：jianli.xiaolinnote.com

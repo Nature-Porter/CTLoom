@@ -1,6 +1,4 @@
-# 来源：公众号@小林coding
-# 简历模版：jianli.xiaolinnote.com
-
+# CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md.
 """
 Skill Packager - Creates a distributable .skill file of a skill folder
 
@@ -26,10 +24,6 @@ EXCLUDE_FILES = {".DS_Store"}
 ROOT_EXCLUDE_DIRS = {"evals"}
 
 
-# 后端八股网站：xiaolincoding.com
-# 来源：公众号@小林coding
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
 
 def should_exclude(rel_path: Path) -> bool:
     """Check if a path should be excluded from packaging."""
@@ -46,10 +40,6 @@ def should_exclude(rel_path: Path) -> bool:
     return any(fnmatch.fnmatch(name, pat) for pat in EXCLUDE_GLOBS)
 
 
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
 
 def package_skill(skill_path, output_dir=None):
     """
@@ -120,10 +110,6 @@ def package_skill(skill_path, output_dir=None):
         return None
 
 
-# 后端八股网站：xiaolincoding.com
-# 简历模版：jianli.xiaolinnote.com
-# 来源：公众号@小林coding
-# Agent网站：xiaolinnote.com
 
 def main():
     if len(sys.argv) < 2:
@@ -151,8 +137,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # Agent网站：xiaolinnote.com
-    # 简历模版：jianli.xiaolinnote.com
-    # 来源：公众号@小林coding
-    # 后端八股网站：xiaolincoding.com

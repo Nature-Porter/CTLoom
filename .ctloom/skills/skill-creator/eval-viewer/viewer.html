@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- CTLoom adaptation; upstream attribution: THIRD_PARTY_NOTICES.md. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eval Review</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <title>CTLoom · Eval Review</title>
+
+
+
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
   <style>
     :root {
@@ -15,8 +16,8 @@
       --border: #e8e6dc;
       --text: #141413;
       --text-muted: #b0aea5;
-      --accent: #d97757;
-      --accent-hover: #c4613f;
+      --accent: #8b5cf6;
+      --accent-hover: #7c3aed;
       --green: #788c5d;
       --green-bg: #eef2e8;
       --red: #c44;
@@ -29,7 +30,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Lora', Georgia, serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
       height: 100vh;
@@ -48,7 +49,7 @@
       flex-shrink: 0;
     }
     .header h1 {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       font-size: 1.25rem;
       font-weight: 600;
     }
@@ -81,7 +82,7 @@
       flex-shrink: 0;
     }
     .section-header {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       padding: 0.75rem 1rem;
       font-size: 0.75rem;
       font-weight: 500;
@@ -100,7 +101,7 @@
       display: inline-block;
       padding: 0.2rem 0.625rem;
       border-radius: 9999px;
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       font-size: 0.6875rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -333,7 +334,7 @@
       flex-shrink: 0;
     }
     .view-tab {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       padding: 0.625rem 1.25rem;
       font-size: 0.8125rem;
       font-weight: 500;
@@ -373,7 +374,7 @@
       border: 1px solid var(--border);
     }
     .benchmark-table th {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       background: var(--header-bg);
       color: var(--header-text);
       font-weight: 500;
@@ -398,7 +399,7 @@
       padding: 1rem;
     }
     .benchmark-notes h3 {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       font-size: 0.875rem;
       margin-bottom: 0.75rem;
     }
@@ -429,7 +430,7 @@
       flex-shrink: 0;
     }
     .nav-btn {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       padding: 0.5rem 1.25rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -449,7 +450,7 @@
       cursor: not-allowed;
     }
     .done-btn {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, "Segoe UI", sans-serif;
       padding: 0.5rem 1.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -544,8 +545,16 @@
   <div id="app" style="height:100vh; display:flex; flex-direction:column;">
     <div class="header">
       <div>
-        <h1>Eval Review: <span id="skill-name"></span></h1>
-        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+        <h1><svg style="vertical-align:middle;margin-right:10px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128" role="img" aria-labelledby="ctloom-icon-title ctloom-icon-desc">
+  <title id="ctloom-icon-title">CTLoom</title>
+  <desc id="ctloom-icon-desc">An original woven C and T monogram: violet frame, cyan warp, and a gold cross-thread.</desc>
+  <rect width="128" height="128" rx="28" fill="#101622"/>
+  <path d="M70 28H40L24 44V84L40 100H64" fill="none" stroke="#a78bfa" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M58 40H104M82 40V100" fill="none" stroke="#67e8f9" stroke-width="12"/>
+  <path d="M48 72H69M95 72H104" fill="none" stroke="#f0b45c" stroke-width="8"/>
+</svg>
+CTLoom · Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into CTLoom.</div>
       </div>
       <div class="progress" id="progress"></div>
     </div>
@@ -634,7 +643,7 @@
   <div class="done-overlay" id="done-overlay">
     <div class="done-card">
       <h2>Review Complete</h2>
-      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <p>Your feedback has been saved. Go back to your CTLoom session and tell CTLoom you're done reviewing.</p>
       <div class="btn-row">
         <button onclick="closeDoneDialog()">OK</button>
       </div>

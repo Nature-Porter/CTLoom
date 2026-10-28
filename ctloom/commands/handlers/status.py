@@ -4,13 +4,11 @@ from __future__ import annotations
 import os
 
 from ctloom.commands.registry import Command, CommandContext, CommandType
-
-
-VERSION = "v0.9.0"
+from ctloom.branding import APP_NAME, DISPLAY_VERSION
 
 
 async def handle_status(ctx: CommandContext) -> None:
-    lines = ["MewCode 状态", "─────────────"]
+    lines = [f"{APP_NAME} 状态", "─────────────"]
 
     mode = ctx.agent.permission_mode.value if ctx.agent else "unknown"
     lines.append(f"模式: {mode}")
@@ -38,7 +36,7 @@ async def handle_status(ctx: CommandContext) -> None:
 
     work_dir = ctx.agent.work_dir if ctx.agent else os.getcwd()
     lines.append(f"工作目录: {work_dir}")
-    lines.append(f"版本: {VERSION}")
+    lines.append(f"版本: {DISPLAY_VERSION}")
 
     ctx.ui.add_system_message("\n".join(lines))
 
@@ -51,4 +49,3 @@ STATUS_COMMAND = Command(
     type=CommandType.LOCAL,
     handler=handle_status,
 )
-

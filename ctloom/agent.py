@@ -1097,7 +1097,7 @@ class Agent:
                 for note in self.notification_fn():
                     conversation.add_system_reminder(note)
 
-            # 对齐 Claude Code：先应用 tool-result budget，再做 auto-compact
+            # 先应用 tool-result budget，再做 auto-compact
             pre_compact_conv, pre_compact_records = apply_tool_result_budget(
                 conversation, self.session_dir, self.replacement_state
             )

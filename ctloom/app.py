@@ -37,6 +37,7 @@ from ctloom.client import (
     create_client,
     resolve_context_window,
 )
+from ctloom.branding import APP_NAME, DISPLAY_VERSION, TERMINAL_MARK
 from ctloom.commands import (
     CommandContext,
     CommandRegistry,
@@ -551,9 +552,9 @@ _CTLOOM_THEME = Theme(
 )
 
 
-class MewCodeApp(App):
+class CTLoomApp(App):
     CSS_PATH = "styles.tcss"
-    TITLE = "MewCode"
+    TITLE = APP_NAME
     INLINE_PADDING = 0
     theme = "ctloom"
     BINDINGS = [
@@ -637,12 +638,15 @@ class MewCodeApp(App):
     @staticmethod
     def _make_banner(model: str = "", work_dir: str = "") -> RichText:
         t = RichText()
-        t.append(" /\\_/\\    ", style="bold color(99)")
-        t.append("MewCode v0.1.0\n", style="color(242)")
-        t.append("( o.o )   ", style="bold color(99)")
-        t.append(f"{model}\n" if model else "\n", style="color(242)")
-        t.append(" > ^ <    ", style="bold color(99)")
-        t.append(work_dir, style="color(242)")
+        labels = (f"{APP_NAME} {DISPLAY_VERSION}", model, work_dir)
+        for index, (segments, label) in enumerate(zip(TERMINAL_MARK, labels)):
+            t.append(" ")
+            for text, color in segments:
+                t.append(text, style=f"bold {color}")
+            t.append("   ")
+            t.append(label, style="bold #e2e8f0" if index == 0 else "#94a3b8")
+            if index < len(labels) - 1:
+                t.append("\n")
         return t
 
     def compose(self) -> ComposeResult:
@@ -1296,7 +1300,7 @@ class MewCodeApp(App):
             self.conversation.add_system_reminder(self._mcp_instructions)
             self._mcp_instructions_ok = True
 
-        # 非阻塞 memory recall：传给 agent，工具执行后注入（与 Claude Code 一致）
+        # 非阻塞 memory recall：传给 agent，工具执行后注入
         if prefetch_task is not None:
             self.agent.memory_recall_task = prefetch_task
             self.agent._memory_recall_consumed = False
